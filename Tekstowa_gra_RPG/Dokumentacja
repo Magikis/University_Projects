@@ -1,0 +1,51 @@
+Dokumentacja Projektu	Kacper Kulczak 279079 PO2016
+Gra NoNameGame  
+1.	Opis
+	Tekstowa gra typu RPG. Postacią przemieszczamy kwadratowe pomieszczenia z przeciwnikami oraz przedmiotami, probując znaleźć wyjście.
+
+
+2. Spis i opis Klas
+	a)Enemy - Wróg z polami Pola:{hp, name, dmg,}, Metody:{is_alive}
+	b)Klasy dziedziczace po Enemy: {NoEnemy,Goblin,Skeleon} które tak naprawdę są samymi konstruktorami. Pozwalają na zbudowanie przeciwników w klasach pól mapy
+	c) Item - Przedmioty Pola:{name,description, value}. Zamieszcza sie go w polach mapy.
+	d)	Gold - Dziedziczy po Item. Jest konstruktorem dla przedmiotu Złoto leżacego w jaskini.
+	e)	Weapon - Dziedzieczy po Item. Pola:{dmg}.
+	d) Shortsword,Longsword - Dzieczy po Weapon. Konskruktory krótkiego i długiego miecza.
+	f)	MapSquare - Pole mapy. Pola: {x,y,Enemy,hole} , Metody virtualne:{intro_text, modify_player}. Obiekt tej klasy nigdy nie powinein powstać.
+	g)	Empty - Dziecziczy po MapSquare. Pole do ktorego nie mozna wejsc
+	h)	StartingRoom, ExitRoom, EmptyCave - Dziedziczą po MapSquare. Nie wywieraja specjalnych efektow poza zwyciestwem dla ExitRoom. Każdy ma własny opis.
+	i) EnemyRoom - Dziedziczy po MapSquare. Pole zawierajace przeciwnika. Metoda modify_player zmniejsza życie gracza.
+	j)	SkeletonRoom, GoblinRoom - Dziedziczą po EnemyRoom. Klasy konstrujące dla EnemyRoom
+	k)	LootRoom - Dziedziczy po MapSquare. Zawiera w sobie obiekt klasy Item ktory zostanie dodany do ekwipunku gracza
+	l)	Find5GoldRoom, FindSwordRoom - Dziedzicza po LootRoom. Konstruja obiekty danego typu. Po wejsciu gracz otrzymuje te przedmioty do swojego ekwipunku.
+	m)Player - Pola: {hp, loc_x, loc_y, inventory, victory}, Metody: {is_alive,print_victory, move, attack}. Jest to stan gracza podczas gry. Dopoki victory != 1 i hp > 0 trwa "petla" gry. Gracz może się przemieszczac wpisujac kierunek świat duża literą. Gra nie pozwoli mu wejść do pola Empty. 
+
+3.	Opis main
+	a)Przed funkcją deklaruję się mapę w postaci dwuwymiarowej tablicy wskaźników na obiekty dziedzizące po MapSquare.
+	b)Stworzenie obiektu gracza. 
+	c) Nastepnie w petli uruchamiamy metody intro_text() oraz modify_player(), nastepnie wymagamy od gracza wpisania komendy. Każda komenda uruchamia jedną iteracje pętli gry.
+	d) Po wyjściu z pętli gry (wygranie, bądź śmierć gracza) podliczany jest wynik koncowy. (Suma wartości przedmiotów i oręża)
+	
+
+4. Instrukcja Obsługi
+	a) Uruchomienie gry.
+		1)Wejdź do folderu z grą przez terminal i wpisz komende make
+		2)Nastepnie włacz grę uruchamiając main, za pomocą komendy ./main
+	b)	Rozgrywka
+		1)Jest to gra tesktowa, więc każdą komendę należy wpisać w wierszu poleceń i zatwierdzić klawiszem Enter. W przypadku wpisania niepoprawnej komendy na ekranie wyświetlą sie wszystkie możliwe do wpisania komendy
+		2)Twoim zadaniem jest dotarcie do wyjścia z jaskini. Możesz poruszać się po świecie za pomocą komend N,S,W,E zgodnie z kierunkami świata.
+		3)Gdy spotkasz potwora możesz go zaatakować komendą Attack, lub po prostu opuścić dane pomieszczenie. Pamiętaj, że przy każdym wejściu do pomieszczenia z przeciwnikiem otrzymasz obrażenia. Gdy twoje, hp spadnie poniżej zera, przegrywasz.
+		4)Gdy wejdziesz do pomieszczenia z przedmitoem, ten bez twojej interakcji znajdzie się w twoim ekwipunku. Możesz zawsze go wyświetlić koemndą I
+		5)Po ukończeniu gry, twój wynik jest obliczany na podstawie zebranych przez Ciebie monet, oraz rodzaju broni jaką zdobyłeś. Im wyższy, tym lepszym człowiekiem jesteś.
+		6)W każdej chwili możesz przerwać grę wpisując komendę Exit	
+
+
+
+
+
+
+
+
+
+
+

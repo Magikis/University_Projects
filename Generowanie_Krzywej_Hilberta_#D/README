@@ -1,0 +1,6 @@
+Program generujacy krzywa Hilberta w 3d.
+Geereuje plik typu postscript
+
+
+Przykladowe uzycie:
+./main 2 500 200 1000 200 250 200 30 -30 > obrazek

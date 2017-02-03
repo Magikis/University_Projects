@@ -1,0 +1,9 @@
+FOR j = 5 TO 10
+PRINT "pokaz i:"
+FOR i = 0 TO 3
+PRINT i
+DONE
+PRINT "akt j:"
+PRINT j
+DONE
+REM jpkmrd

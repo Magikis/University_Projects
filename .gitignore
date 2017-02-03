@@ -1,0 +1,17 @@
+*~
+*.o
+*.out
+*.aux
+*.log
+*.synctex.gz
+*.toc
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.zip
+.ipynb_checkpoints/
+deps/deps.jl

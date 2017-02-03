@@ -1,0 +1,18 @@
+program Prog
+procedure f(x,y)
+	procedure g(ARG)
+		local s
+			begin
+				return ARG + a(2,2,6) 
+			end
+	begin
+		x := x + g(y);
+		return x + y
+	end
+procedure a(a1,a2,a3)
+	begin
+		return a1*a2+a3  
+	end
+begin
+	 write f( 1,2  ) 
+end

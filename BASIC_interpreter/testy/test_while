@@ -1,0 +1,10 @@
+LET y = 0
+WHILE y < 3
+LET x = 0
+LET y = y + 1
+WHILE x < 3
+  LET x = x + 1
+  PRINT "x"
+DONE
+PRINT "y"
+DONE

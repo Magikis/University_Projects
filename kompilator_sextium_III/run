@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "main('$1')." | swipl compiler.pl
+xxd -p -r < result > $1.sextium
+./sextium $1.sextium
+rm -f $1.sextium result

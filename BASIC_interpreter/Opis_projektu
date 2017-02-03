@@ -1,0 +1,13 @@
+Tytuł: Interpreter języka BASIC
+
+Zadaniem jest napisanie w języku Ocaml interpretera języka BASIC. 
+Będzie on wczytywał z pliku pełne programy w BASIC i od razu wykonywał je. 
+
+Funkcjonalności:
+	- Liczby całkowite
+	- Napisy
+	- Wczytywanie programu z pliku
+	- skoki do etykiet (GOTO, LABEL)
+	- pętle (FOR, WHILE)
+	- instrukcje warunkowe (IF, IF ... ELSE)
+	- obsługa wejścia wyjścia (PRINT, INPUT)

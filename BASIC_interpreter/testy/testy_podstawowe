@@ -1,0 +1,6 @@
+_start PRINT "DZIALANIE PRINT: OK"
+INPUT x
+PRINT "DZIALANIE INPUT: (X)"
+PRINT x
+PRINT "JEZELI x > 10 to powrot na poczatek:"
+IF x > 10 THEN _start

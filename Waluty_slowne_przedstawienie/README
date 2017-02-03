@@ -1,0 +1,7 @@
+Program wypisjacy slownie kwoty pieniedzy w jezyku angielskim
+
+Kompilacja:
+	komenda make
+Uzycie:
+	./main <liczba> <waluta>
+	
