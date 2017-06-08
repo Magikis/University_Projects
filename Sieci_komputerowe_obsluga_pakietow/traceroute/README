@@ -1,0 +1,9 @@
+Program na przedmiot "Sieci Komputerowe 2017"
+
+Kompilacja:
+	Kompilujemy program za pomoca komendy make
+Wymagania:
+	gcc (5.4>=)
+Uzycie:
+	./traceroute "Adres_IP"
+
